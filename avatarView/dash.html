@@ -296,10 +296,12 @@
           var leftDashTemplate = Handlebars.compile(source);
           //var indexTracker = $(event.target).attr('data-result-index');
           var indexTracker = $(event.target).closest('div').attr('data-result-index');
-          //console.log(indexTracker);
-          //console.log(event.target);
-          var templateResult = leftDashTemplate(window.avatar.dashFatArrayData[indexTracker]);
+        
+          var templateResult = leftDashTemplate(window.g.mapRowData);
           $('.dash-left-full-margin').html(templateResult);
+
+          //
+          window.gmd.interactMap.nestedMap(window.g.mapRowData['ACCOUNT'].value);
 
           //this loads the work description for the expanded view
           source   = $("#job-description").html();

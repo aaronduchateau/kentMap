@@ -9,6 +9,42 @@ window.gmd = {
 			    title: 'Hello World!'
 			});
 			window.map.panTo(jacksonCounty);
+		},
+		nestedMap: function(customAccount){
+			//window.nestedMap.setMap(null);
+			var jacksonCounty = new google.maps.LatLng(window.infoWindowLat, window.infoWindowLng);
+			var mapOptions = {
+				center: jacksonCounty,
+				zoom: 17,
+				mapTypeId: google.maps.MapTypeId.HYBRID,
+				suppressInfoWindows: true
+			};
+
+			window.nestedMap = new google.maps.Map(document.getElementById('nested-map'),
+			  mapOptions);
+			//console.log(customAccount);
+			var customAccountString = 'ACCOUNT = ' + customAccount;
+			var layer = new google.maps.FusionTablesLayer({
+		    query: {
+		      select: 'geometry',
+		      from: '1w27IrwI0eK0nr9_dXm70L56EnzGpb6t_4HC1XZ_a',
+		      where: customAccountString
+		    },
+		    styles: [{
+		      polygonOptions: {
+		      	strokeColor: '#8a0002',
+		      	strokeOpacity: 1,
+    			strokeWeight: 2,
+    			fillColor: '#0d6a92',
+		        fillOpacity: 0,
+		        suppressInfoWindows: true
+		      }
+		    }]
+		  });
+
+		  layer.setMap(window.nestedMap);
+		
+
 		}
 	},
 	populateMap : function (latMap, lngMap){
@@ -59,7 +95,7 @@ window.gmd = {
 		},1300);
 
 	    function populateMap(){
-		    layer = new google.maps.FusionTablesLayer({
+		  layer = new google.maps.FusionTablesLayer({
 		    query: {
 		      select: 'geometry',
 		      from: '1w27IrwI0eK0nr9_dXm70L56EnzGpb6t_4HC1XZ_a'
@@ -74,9 +110,12 @@ window.gmd = {
 		      }
 		    }]
 		  });
+
 		  layer.setMap(window.map);
 
 		  google.maps.event.addListener(layer, 'click', function(e) {
+		  	window.infoWindowLng = e.latLng.B;
+		  	window.infoWindowLat = e.latLng.k;
 
 		    if (e.row['FEEOWNER'].value){
 		    	var feeOwner = e.row['FEEOWNER'].value;

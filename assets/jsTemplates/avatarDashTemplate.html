@@ -132,89 +132,113 @@
             		<td style="width:50%;">
             			<div class="well custom-well-info">
             				<span class="just-custom-font">
-            					Gig Compensation:
+            					Owner Name / In Care of:
             				</span>
             				<br/>
             				<h5>
 	            				<span class="label label-primary darker-blue-backgroud-class">
-	            					$ {{ORIGINALLISTPRICE}} / hr
+	            					{{emptyCheck FEEOWNER.value}} / {{emptyCheck INCAREOF.value}}
 	            				</span>	
             				</h5>
             			</div>
             			<div class="well custom-well-info">
             				<span class="just-custom-font">
-            				 	Gig location:
+            				 	Estimated Land Value / Improvment Value:
             				</span>
             				<br/>
             				<h5>
             					<span class="label label-primary darker-blue-backgroud-class">
-            						{{Property}}
+            						{{emptyCheck LANDVALUE.value}} / {{emptyCheck IMPVALUE.value}}
         						</span>
     						</h5>
     					</div>
             			<div class="well custom-well-info">
             				<span class="just-custom-font">
-								Gig date:
+								Measurment in Acres:
 							</span>
 							<br/>
 							<h5>
 								<span class="label label-primary darker-blue-backgroud-class">
-								{{DATE}} @ {{STARTTIME}} - {{ENDTIME}}
+								{{emptyCheck ACREAGE.value}}
+								</span>
+							</h5>
+            			</div>
+            			<div class="well custom-well-info">
+            				<span class="just-custom-font">
+								County Account Reference:
+							</span>
+							<br/>
+							<h5>
+								<span class="label label-primary darker-blue-backgroud-class">
+								#{{emptyCheck ACCOUNT.value}}
 								</span>
 							</h5>
             			</div>
             		</td>
             		<td style="max-width:50%;">
+            			<div class="well custom-well-info">
+            				<span class="just-custom-font">
+            				 	Site Address:
+            				</span>
+            				<br/>
+            				<h5>
+            					<span class="label label-primary darker-blue-backgroud-class">
+            						{{emptyCheck SITEADD.value}}
+        						</span>
+    						</h5>
+    					</div>
 	            		<div class="well custom-well-info">
-		            		<span class="just-custom-font">Preferred Candidate Experience:</span>
-		            		<br/>
-		            		<h5>
-		            			<span class="label label-primary darker-blue-backgroud-class">DAT license</span>
-		            		</h5>
-	            		</div>
-	            		<div class="well custom-well-info">
-		            		<span class="just-custom-font">Preferred Candidate Equipment:</span>
-		            		<br/>
-		            		<h5>
-		            			<span class="label label-primary darker-blue-backgroud-class">iPad</span>
-		            			<span class="label label-primary darker-blue-backgroud-class">Google Glass</span>
-		            		</h5>
-	            		</div>
-	            		<div class="well custom-well-info">
-		            		<span class="just-custom-font">Preferred Meeting Technology:</span>
-		            		<br/>
-		            		<h5>
-		            			<span class="label label-primary darker-blue-backgroud-class">Google Hangout</span>
-		            		</h5>
-	            		</div>
+            				<span class="just-custom-font">
+            					Contact Mailing Address 1:
+            				</span>
+            				<br/>
+            				<h5>
+	            				<span class="label label-primary darker-blue-backgroud-class">
+	            					{{emptyCheck ADDRESS1.value}}
+	            				</span>	
+            				</h5>
+            			</div>
+            			<div class="well custom-well-info">
+            				<span class="just-custom-font">
+            				 	Contact Mailing Address 2:
+            				</span>
+            				<br/>
+            				<h5>
+            					<span class="label label-primary darker-blue-backgroud-class">
+            						{{emptyCheck ADDRESS2.value}}
+        						</span>
+    						</h5>
+    					</div>
+            			<div class="well custom-well-info">
+            				<span class="just-custom-font">
+								City, State, ZIP
+							</span>
+							<br/>
+							<h5>
+								<span class="label label-primary darker-blue-backgroud-class">
+								{{emptyCheck CITY.value}}, {{emptyCheck STATE.value}} {{emptyCheck ZIPCODE.value}} 
+								</span>
+							</h5>
+            			</div>
             		</td>
             	</tr>	
             </table>
             <div class="custom-well-info" style="margin-top: 10px;padding-top: 10px;padding-bottom: 10px;border-radius: 4px;">
-	            <table style="width:95%;">
-		            <tr>
-			            <td>
-			            	<h1>
-			            		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true" style="color:white;margin-left:-15px;margin-right:5px;"></span>
-			            	</h1>
-			            </td>
-			            <td style="overflow:hidden;max-height:110px;" id="image-thumb-slider">
-			            	<div style="width:1000000px;max-height:100px;">
-			            		<div style="position:relative;">
-			            		<img src="http://stateofthemarkets.com/wp-content/uploads/2013/06/factory-floor-650x400.jpg" class="thumbnail-class"/><img src="http://stateofthemarkets.com/wp-content/uploads/2013/06/factory-floor-650x400.jpg" class="thumbnail-class"/><img src="http://stateofthemarkets.com/wp-content/uploads/2013/06/factory-floor-650x400.jpg" class="thumbnail-class"/><img src="http://stateofthemarkets.com/wp-content/uploads/2013/06/factory-floor-650x400.jpg" class="thumbnail-class"/><img src="http://stateofthemarkets.com/wp-content/uploads/2013/06/factory-floor-650x400.jpg" class="thumbnail-class"/><img src="http://stateofthemarkets.com/wp-content/uploads/2013/06/factory-floor-650x400.jpg" class="thumbnail-class"/><img src="http://stateofthemarkets.com/wp-content/uploads/2013/06/factory-floor-650x400.jpg" class="thumbnail-class"/><img src="http://stateofthemarkets.com/wp-content/uploads/2013/06/factory-floor-650x400.jpg" class="thumbnail-class"/><img src="http://stateofthemarkets.com/wp-content/uploads/2013/06/factory-floor-650x400.jpg" class="thumbnail-class"/><img src="http://stateofthemarkets.com/wp-content/uploads/2013/06/factory-floor-650x400.jpg" class="thumbnail-class"/><img src="http://stateofthemarkets.com/wp-content/uploads/2013/06/factory-floor-650x400.jpg" class="thumbnail-class"/>
-			            		</div>
-			            	</div>
-			            </td>
-			            <td>
-			            	<h1>
-			            		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="color:white;margin-left: 0px;"></span>
-			            	</h1>
-			            </td>
-		            </tr>
-	            </table>
-
+	            <div id="nested-map" style="height:400px;">
+	            </div>
             </div>
 		</div>
 	</div>
+</script>
+<script type="text/javascript">
+Handlebars.registerHelper('emptyCheck', function(passedString) {
+    var theString = passedString ? passedString : "N/A"; 
+    return new Handlebars.SafeString(theString)
+});
+Handlebars.registerHelper("last", function(arrayPassed) {
+	if (arrayPassed){	
+  		return arrayPassed[arrayPassed.length-1];
+	}
+});
 </script>
 	    	
