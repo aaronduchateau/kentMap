@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Fusion Tables styling</title>
+    <style>
+      html, body, #map-canvas {
+        height: 80%;
+        margin: 0px;
+        padding: 0px
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+    <script>
+var map, layer;
+
+function initialize() {
+
+  var jacksonCounty = new google.maps.LatLng(42.320921, -122.877734);
+
+  map = new google.maps.Map(document.getElementById('map-canvas'), {
+    center: jacksonCounty,
+    zoom: 12
+  });
+  map.setTilt(45);
+
+  layer = new google.maps.FusionTablesLayer({
+    query: {
+      select: 'geometry',
+      from: '1w27IrwI0eK0nr9_dXm70L56EnzGpb6t_4HC1XZ_a'
+    },
+    styles: [{
+      polygonOptions: {
+        fillColor: '#00FF00',
+        fillOpacity: 0.1
+      }
+    }]
+  });
+  layer.setMap(map);
+
+  google.maps.event.addListener(layer, 'click', function(e) {
+
+    // Change the content of the InfoWindow
+    //e.infoWindowHtml = "<b>Fee Owner</b>:" + e.row['FEEOWNER'].value;
+    if (e.row['FEEOWNER'].value){
+      e.infoWindowHtml = "<div><h5>Fee Owner: " + e.row['FEEOWNER'].value + "</h5>";
+      e.infoWindowHtml += "<hr/><b>Acreage: </b>" + e.row['ACREAGE'].value + "<br/>";
+      e.infoWindowHtml += "<b>Value: </b>" + e.row['ACREAGE'].value + "<br/>";
+      e.infoWindowHtml += "<a href='javascript:void(0);' data-result-index='288' class='btn btn-primary pull-right left-open' style='margin-top:-3px;'>Full Information</a><div style='clear:both;'></div>";
+      e.infoWindowHtml += "</div>";
+    } else {
+
+    }
+    console.log(e.row);
+    // If the delivery == yes, add content to the window
+    //if (e.row['delivery'].value == 'yes') {
+        //e.infoWindowHtml += "Delivers!";
+    //}
+  });
+
+
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas"></div>
+  </body>
+</html>
