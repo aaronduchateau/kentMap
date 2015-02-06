@@ -35,8 +35,7 @@ window.gmd = {
 		      	strokeColor: '#8a0002',
 		      	strokeOpacity: 1,
     			strokeWeight: 2,
-    			fillColor: '#0d6a92',
-		        fillOpacity: 0,
+		        fillOpacity: 0.01,
 		        suppressInfoWindows: true
 		      }
 		    }]
@@ -102,7 +101,8 @@ window.gmd = {
 		    },
 		    styles: [{
 		      polygonOptions: {
-		      	strokeColor: '#0d6a92',
+		      	//strokeColor: '#0d6a92',
+		      	strokeColor: '#FFFFFF',
 		      	strokeOpacity: 1,
     			strokeWeight: 1,
 		        fillColor: '#0d6a92',
